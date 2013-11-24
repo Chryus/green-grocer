@@ -31,6 +31,7 @@ def count_cart(cart)
   cart.each do |item|
     # <{"AVOCADO" => {:price => 3.00, :clearance_items => true}}>
     item.each do |food, info|
+      #<"AVOCADO" => {:price => 3.00, :clearance_items => true}>
       #if cart 2 does not have food then merge it with info and give it a count key value of 1
       if cart2[food].nil?
         cart2[food] = info
@@ -38,7 +39,7 @@ def count_cart(cart)
       #if cart2food exists, add one to the count key
       else
         cart2[food][:count] += 1
-       end
+      end
     end
   end
   cart2
